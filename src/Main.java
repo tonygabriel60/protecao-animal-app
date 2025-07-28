@@ -15,7 +15,7 @@ public class Main {
         ong = new ONGProtecaoAnimal(
                 "12.345.678/0001-90",
                 "ONG Proteção dos animas é a nossa, prioridade",
-                "(48) 998449849",
+                "(48) 998449848",
                 "contato@amigosanimais.org",
                 "Rua Alfredo, 340 - Fatima - Joinville - SC"
         );
