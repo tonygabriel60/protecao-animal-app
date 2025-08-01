@@ -15,7 +15,7 @@ public class Main {
         ong = new ONGProtecaoAnimal(
                 "12.345.678/0001-90",
                 "ONG Proteção dos animas é a nossa, prioridade",
-                "(48) 998449848",
+                "(48) 998449849",
                 "contato@amigosanimais.org",
                 "Rua Alfredo, 340 - Fatima - Joinville - SC"
         );
@@ -432,7 +432,7 @@ public class Main {
     private static void gerarAdocao() {
         System.out.println("\n=== GERAR ADOÇÃO ===");
 
-        // Listar adotantes disponíveis
+    
         System.out.println("\nAdotantes disponíveis:");
         ong.getAdotantes().stream()
                 .filter(Adotante::validar)
@@ -441,7 +441,7 @@ public class Main {
         System.out.print("\nDigite o CPF do adotante: ");
         String cpfAdotante = scanner.nextLine();
 
-        // Listar animais disponíveis
+        
         System.out.println("\nAnimais disponíveis para adoção:");
         ong.getAnimaisDisponiveis().forEach(animal ->
                 System.out.println("ID: " + animal.getId() + " - Nome: " + animal.getNome()));
@@ -452,7 +452,7 @@ public class Main {
         System.out.print("Observações: ");
         String observacoes = scanner.nextLine();
 
-        // Criar a adoção
+        
         Adocao adocao = ong.criarAdocao(cpfAdotante, idAnimal, observacoes);
         if (adocao != null) {
             System.out.println("Adoção gerada com sucesso! ID: " + adocao.getId());
@@ -467,7 +467,6 @@ public class Main {
     private static void realizarAdocao() {
         System.out.println("\n=== REALIZAR ADOÇÃO ===");
 
-        // Listar adoções pendentes (termo = false)
         System.out.println("\nAdoções pendentes:");
         ong.getAdocoes().stream()
                 .filter(adocao -> !adocao.isTermoAssinado())
@@ -486,7 +485,7 @@ public class Main {
         System.out.print("\nDigite o ID da adoção a ser realizada: ");
         String idAdocao = scanner.nextLine();
 
-        // Encontrar a adoção
+       
         Adocao adocao = ong.getAdocoes().stream()
                 .filter(a -> a.getId().equals(idAdocao))
                 .findFirst()
@@ -502,7 +501,7 @@ public class Main {
             return;
         }
 
-        // Mostrar detalhes da adoção
+      
         System.out.println("\nDetalhes da Adoção:");
         System.out.println("ID: " + adocao.getId());
         System.out.println("Adotante: " + adocao.getAdotante().getNome());
